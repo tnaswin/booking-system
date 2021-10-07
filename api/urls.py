@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("login", jwt_views.TokenObtainPairView.as_view(), name="login"),
-    path("", include("api.urls")),
+    path("run", views.HelloWorld.as_view(), name="hello-world"),
+    path("user", views.Extractor.as_view(), name="user-info"),
 ]
