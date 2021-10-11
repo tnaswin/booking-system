@@ -4,6 +4,8 @@ from . import views
 
 urlpatterns = [
     path("login", jwt_views.TokenObtainPairView.as_view(), name="login"),
-    path("run", views.HelloWorld.as_view(), name="hello-world"),
-    path("user", views.Extractor.as_view(), name="user-info"),
+    path("hello", views.HelloWorld.as_view(), name="hello-world"),
+    path("user", views.UserDetails.as_view(), name="user-info"),
+    path("register", views.RegisterAPI.as_view(), name="register"),
+    path("delete/<int:id>", views.delete_user, name="user-delete"),
 ]
